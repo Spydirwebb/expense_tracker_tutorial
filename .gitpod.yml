@@ -3,4 +3,4 @@ image:
 
 tasks:
   - init: 'echo "TODO: Replace with init/build command"'
-    command: npm install create-react-app
+    
