@@ -1,9 +1,18 @@
-function App() {
-  return (
-    <div className="App">
-        <h3>Hello World</h3>
-    </div>
-  );
+//src/App.js
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+
+import store from "./redux/store"
+import AuthButton from "./components/AuthButton.js"
+
+class App extends Component {
+  render() {
+    return (
+        <Provider store={store}>
+            <AuthButton />
+        </Provider>
+    )
+  }
 }
 
 export default App;
