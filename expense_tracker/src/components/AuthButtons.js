@@ -5,7 +5,10 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 
-class AuthButton extends Component {
+import AuthButtonGoogle from "./AuthButtonGoogle"
+import AuthButtonFB from "./AuthButtonFB"
+
+class AuthButtons extends Component {
     static propTypes = {
         auth: PropTypes.object,
         firebase: PropTypes.shape({
@@ -21,7 +24,8 @@ class AuthButton extends Component {
         if(isEmpty(this.props.auth)) {
             return(
                 <div>   
-                    <button onClick={()=>this.props.firebase.login({provider:'facebook', type: 'popup'})}>Log in with Facebook</button>
+                    <AuthButtonFB />
+                    <AuthButtonGoogle />
                 </div>
             )
         }
@@ -31,7 +35,7 @@ class AuthButton extends Component {
 }
 
 const mapStateToProps = state => {
-        return {auth: state.firebase.auth}
+    return {auth: state.firebase.auth}
 }
 
 const mapDispatchToProps = {
@@ -40,4 +44,4 @@ const mapDispatchToProps = {
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
     firebaseConnect()
-)(AuthButton)
+)(AuthButtons)

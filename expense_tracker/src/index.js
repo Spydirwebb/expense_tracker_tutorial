@@ -35,6 +35,15 @@ const rrfProps = {
   createFirestoreInstance,
 };
 
+/*const reduxDevToolsExtension = window.devToolsExtension
+if (
+  process.env.NODE_ENV === "development" &&
+  typeof reduxDevToolsExtension === "function"
+) {
+  enhancers.push(reduxDevToolsExtension())
+}
+*/
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

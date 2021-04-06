@@ -1,13 +1,14 @@
 //src/App.js
 import React, { Component } from 'react'
 
-import AuthButton from "./components/AuthButton.js"
+import AuthButtonFB from "./components/AuthButtons.js"
 
 class App extends Component {
   render() {
     return (
         <div>
-            <AuthButton />
+            <h1>Sign In</h1>
+            <AuthButtonFB />
         </div>
     )
   }
